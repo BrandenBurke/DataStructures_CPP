@@ -1,0 +1,70 @@
+Author: Branden Burke 10/6/21
+Programming Assignment: #2 
+Valgrind: Failed! I could NOT figure out why. Does it have to do with
+		the testing program seuence_test.cpp?
+
+==4174== HEAP SUMMARY:
+==4174==     in use at exit: 16 bytes in 1 blocks
+==4174==   total heap usage: 5 allocs, 4 frees, 74,825 bytes allocated
+==4174== 
+==4174== LEAK SUMMARY:
+==4174==    definitely lost: 0 bytes in 0 blocks
+==4174==    indirectly lost: 0 bytes in 0 blocks
+==4174==      possibly lost: 0 bytes in 0 blocks
+==4174==    still reachable: 16 bytes in 1 blocks
+==4174==         suppressed: 0 bytes in 0 blocks
+==4174== Reachable blocks (those to which a pointer was found) are not shown.
+==4174== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==4174== 
+==4174== Use --track-origins=yes to see where uninitialised values come from
+==4174== For lists of detected and suppressed errors, rerun with: -s
+==4174== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Segmentation fault (core dumped)
+
+
+-- USER MENU --
+The following choices are available: 
+ !   Activate the start( ) function
+ +   Activate the advance( ) function
+ ?   Print the result from the is_item( ) function
+ C   Print the result from the current( ) function
+ P   Print a copy of the entire sequence
+ S   Print the result from the size( ) function
+ I   Insert a new number with the insert(...) function
+ A   Attach a new number with the attach(...) function
+ R   Activate the remove_current( ) function
+ Q   Quit this test program
+Enter choice: 
+
+
+
+-- TEST CASES --
+
+insert(2) works
+insert(1) works
+attach(500) 500 works
+size() is 3
+current() is 500
+prints (copy):
+1
+500
+2
+
+remove_current works
+prints (copy):
+1
+2
+
+start() works
+current() is 1
+advance() works
+current() is 2
+attach(500) works
+insert(1000) works
+prints (copy):
+1
+2
+1000
+500
+
+is_item() works, There is an item
